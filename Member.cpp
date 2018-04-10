@@ -5,11 +5,14 @@ using namespace std;
 int Member::AllUsers = 0;
 
 /*Constructor*/
+/********************************************************************************************/
 Member::Member()
 {
 	totalUsers++;
 }
+
 /*Destructor*/
+/********************************************************************************************/
 Member::~Member()
 {
 	totalUsers--;
@@ -23,6 +26,9 @@ Member::~Member()
 		(*pointer)->following.erase(this);
 	}
 }
+
+/********************************************************************************************/
+
 void Member::add(Member& o) //o is for other
 {
 	followers.insert(&o);
