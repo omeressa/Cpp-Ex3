@@ -8,18 +8,25 @@
 class Member {
 	
 	static int AllUsers;//Number of members
+	
+	/**************************************************************************************/
 
 	std::set<Member*> followers;//List of followers for this member
 	std::set<Member*> following;//List of following for this member
+	
+	/**************************************************************************************/
 
-	void add(Member& o);//Add to following
-	void delete(Member& o);//Remove from following
+	void addToFollowers(Member& o);//Add to following
+	void deleteFromFollowers(Member& o);//Remove from following
 
 public:
 	Member();
 	~Member();
+	/**************************************************************************************/
 	
 	static int count();//gives back the number of all members
+	
+	/**************************************************************************************/
 
 	void follow(Member& o);//function to follow a member
 	void unfollow(Member& o);//function to unfollow a member
