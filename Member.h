@@ -7,17 +7,17 @@
 
 class Member {
 	
-	static int AllUsers;//Number of members
+	static int AllUsers;// total number of members
 	
 	/**************************************************************************************/
 
-	std::set<Member*> followers;//List of followers for this member
-	std::set<Member*> following;//List of following for this member
+	std::set<Member*> followers;// members that I follow
+	std::set<Member*> following;// members that follow me
 	
 	/**************************************************************************************/
 
-	void addToFollowers(Member& o);//Add to following
-	void deleteFromFollowers(Member& o);//Remove from following
+	void adding(Member& other);//Add to following
+	void deleting(Member& other);//Remove from following
 
 public:
 	Member(); // This is the constructor declaration
