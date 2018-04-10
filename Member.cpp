@@ -29,53 +29,40 @@ Member::~Member()
 
 /********************************************************************************************/
 
-void Member::addToFollowers(Member& o) //o is for other
-{
-	followers.insert(&o);
+void Member::addToFollowers(Member& other){
+	followers.insert(&other);
 }
 
-void Member::deleteFromFollowers(Member& o) //o is for other
-{
-	followers.erase(&o);
+void Member::deleteFromFollowers(Member& other){
+	followers.erase(&other);
 }
 
 /********************************************************************************************/
 
-int Member::count()
-{
+int Member::count(){
 	return AllUsers;
 }
 
 /********************************************************************************************/
 
-void Member::follow(Member& o) //o is for other
+void Member::follow(Member& other){
+	if( &other != this)
 {
-	if (following.find(&o) == following.end()){
-		following.insert(&o);
-		o.addToFollowers(*this);
-	}
-	else if (&o == this)
-		return;
+	following.insert(&other);
+	other.followers.insert(this);
+}
 }
 
-
-void Member::unfollow(Member& o) //o is for other
-{
-	if (following.find(&o) != following.end()){
-		following.erase(&o);
-		o.deleteFromFollowers(*this);
-	}
-	else if (&o == this)
-		return;
+void Member::unfollow(Member& other){
+	following.erase(&other);
+	other.followers.erase(this);
 }
 
-int Member::numFollowers() const
-{
+int Member::numFollowers() const{
 	return followers.size();
 }
 
-int Member::numFollowing() const 
-{
+int Member::numFollowing() const{
 	return following.size();
 }
 
