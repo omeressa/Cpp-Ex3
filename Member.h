@@ -11,13 +11,16 @@ class Member {
 	
 	/**************************************************************************************/
 
-	std::set<Member*> followers;// members that I follow
-	std::set<Member*> following;// members that follow me
+	std::set<Member*> followers;// members which I'm following
+	std::set<Member*> following;// members which are following me
 	
 	/**************************************************************************************/
-
+             /*both adding and deleting functions r to ease the insert and erase procsess*/
+	
 	void adding(Member& other);//Add to following
 	void deleting(Member& other);//Remove from following
+	
+	/**************************************************************************************/
 
 public:
 	Member(); // This is the constructor declaration
