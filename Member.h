@@ -6,29 +6,26 @@
 #include <set>
 
 class Member {
+	
 	static int AllUsers;//Number of members
 
 	std::set<Member*> followers;//List of followers for this member
 	std::set<Member*> following;//List of following for this member
 
-	void addToTheFollowers(Member& o);//Add to following
-
-	void deleteFromTheFollowers(Member& o);//Remove from following
+	void add(Member& o);//Add to following
+	void delete(Member& o);//Remove from following
 
 public:
 	Member();
-
 	~Member();
+	
+	static int count();//gives back the number of all members
 
 	void Follow(Member& o);//function to follow a member
-
 	void Unfollow(Member& o);//function to unfollow a member
-
 	int numberOfFollowers() const;//function to give the number of followers
-
 	int numberOfFollowing() const;//function to give the number of following
 
-	static int count();//gives back the number of all members
 };
 
 #endif /* MEMBER_HPP_ */
