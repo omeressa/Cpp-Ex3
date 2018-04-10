@@ -19,12 +19,12 @@ public:
 	Member();
 	~Member();
 	
-	static int allMembers();//gives back the number of all members
+	static int count();//gives back the number of all members
 
-	void Follow(Member& o);//function to follow a member
-	void Unfollow(Member& o);//function to unfollow a member
-	int numberOfFollowers() const;//function to give the number of followers
-	int numberOfFollowing() const;//function to give the number of following
+	void follow(Member& o);//function to follow a member
+	void unfollow(Member& o);//function to unfollow a member
+	int numFollowers() const;//function to give the number of followers
+	int numFollowing() const;//function to give the number of following
 
 };
 
