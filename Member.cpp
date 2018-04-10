@@ -29,11 +29,11 @@ Member::~Member()
 
 /********************************************************************************************/
 
-void Member::addToFollowers(Member& other){
+void Member::adding(Member& other){
 	followers.insert(&other);
 }
 
-void Member::deleteFromFollowers(Member& other){
+void Member::deleting(Member& other){
 	followers.erase(&other);
 }
 
@@ -49,13 +49,13 @@ void Member::follow(Member& other){
 	if( &other != this)
 {
 	following.insert(&other);
-	other.followers.insert(this);
+	other.adding(*this);
 }
 }
 
 void Member::unfollow(Member& other){
 	following.erase(&other);
-	other.followers.erase(this);
+	other.deleting(*this);
 }
 
 int Member::numFollowers() const{
