@@ -41,14 +41,14 @@ void Member::delete(Member& o) //o is for other
 
 /********************************************************************************************/
 
-int Member::allMembers()
+int Member::count()
 {
 	return AllUsers;
 }
 
 /********************************************************************************************/
 
-void Member::Follow(Member& o) //o is for other
+void Member::follow(Member& o) //o is for other
 {
 	if (following.find(&o) == following.end()){
 		following.insert(&o);
@@ -59,7 +59,7 @@ void Member::Follow(Member& o) //o is for other
 }
 
 
-void Member::Unfollow(Member& o) //o is for other
+void Member::unfollow(Member& o) //o is for other
 {
 	if (following.find(&o) != following.end()){
 		following.erase(&o);
@@ -69,12 +69,12 @@ void Member::Unfollow(Member& o) //o is for other
 		return;
 }
 
-int Member::numberOfFollowers() const
+int Member::numFollowers() const
 {
 	return followers.size();
 }
 
-int Member::numberOfFollowing() const 
+int Member::numFollowing() const 
 {
 	return following.size();
 }
