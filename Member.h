@@ -20,8 +20,8 @@ class Member {
 	void deleteFromFollowers(Member& o);//Remove from following
 
 public:
-	Member();
-	~Member();
+	Member(); // This is the constructor declaration
+	~Member(); // This is the destructor declaration
 	/**************************************************************************************/
 	
 	static int count();//gives back the number of all members
