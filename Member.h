@@ -19,7 +19,7 @@ public:
 	Member();
 	~Member();
 	
-	static int count();//gives back the number of all members
+	static int allMembers();//gives back the number of all members
 
 	void Follow(Member& o);//function to follow a member
 	void Unfollow(Member& o);//function to unfollow a member
