@@ -52,7 +52,7 @@ void Member::follow(Member& o) //o is for other
 {
 	if (following.find(&o) == following.end()){
 		following.insert(&o);
-		o.addToFollowers(*this);
+		o.add(*this);
 	}
 	else if (&o == this)
 		return;
@@ -63,7 +63,7 @@ void Member::unfollow(Member& o) //o is for other
 {
 	if (following.find(&o) != following.end()){
 		following.erase(&o);
-		o.deleteFromFollowers(*this);
+		o.delete(*this);
 	}
 	else if (&o == this)
 		return;
