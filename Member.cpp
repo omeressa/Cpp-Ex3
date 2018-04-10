@@ -8,14 +8,14 @@ int Member::AllUsers = 0;
 /********************************************************************************************/
 Member::Member()
 {
-	totalUsers++;
+	AllUsers++;
 }
 
 /*Destructor*/
 /********************************************************************************************/
 Member::~Member()
 {
-	totalUsers--;
+	AllUsers--;
 
 	set<Member*>::iterator pointer;
 	
