@@ -29,12 +29,12 @@ Member::~Member()
 
 /********************************************************************************************/
 
-void Member::add(Member& o) //o is for other
+void Member::addToFollowers(Member& o) //o is for other
 {
 	followers.insert(&o);
 }
 
-void Member::delete(Member& o) //o is for other
+void Member::deleteFromFollowers(Member& o) //o is for other
 {
 	followers.erase(&o);
 }
@@ -52,7 +52,7 @@ void Member::follow(Member& o) //o is for other
 {
 	if (following.find(&o) == following.end()){
 		following.insert(&o);
-		o.add(*this);
+		o.addToFollowers(*this);
 	}
 	else if (&o == this)
 		return;
@@ -63,7 +63,7 @@ void Member::unfollow(Member& o) //o is for other
 {
 	if (following.find(&o) != following.end()){
 		following.erase(&o);
-		o.delete(*this);
+		o.deleteFromFollowers(*this);
 	}
 	else if (&o == this)
 		return;
