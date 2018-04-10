@@ -1,58 +1,57 @@
 #include "Member.h"
-
 using namespace std;
 
-int Member::totalUsers = 0;
-/**
-*default constructor
-*/
-Member::Member() {
-	//Increase number of the user.
+int Member::AllUsers = 0;
+
+Member::Member()
+{
 	totalUsers++;
 }
 
-/**
-* The destructor go through sets followers and following of the object that deleted
-* and deletes this member from the sets followers and following of the other members.
-*/
-Member::~Member() {
+Member::~Member()
+{
 	totalUsers--;
 
 	set<Member*>::iterator pointer;
-	for (pointer = following.begin(); pointer != following.end(); pointer++)
-	{
+	
+	for(pointer = following.begin(); pointer != following.end(); pointer++){
 		(*pointer)->followers.erase(this);
 	}
-	for (pointer = followers.begin(); pointer != followers.end(); pointer++)
-	{
+	for(pointer = followers.begin(); pointer != followers.end(); pointer++){
 		(*pointer)->following.erase(this);
 	}
 }
 
-int Member::count() {
-	return totalUsers;
+int Member::count()
+{
+	return AllUsers;
 }
 
-int Member::numFollowers() const {
-	int numFollowers = followers.size();
-	return numFollowers;
+int Member::numberOfFollowers() const
+{
+	int numberOfFollowers = followers.size();
+	return numberOfFollowers;
 }
 
-int Member::numFollowing() const {
-	int numFollowing = following.size();
-	return numFollowing;
+int Member::numberOfFollowing() const 
+{
+	int numberOfFollowing = following.size();
+	return numberOfFollowing;
 }
 
-void Member::addToFollowers(Member& o) {//o is for other
+void Member::add(Member& o) //o is for other
+{
 	followers.insert(&o);
 }
 
-void Member::deleteFromFollowers(Member& o) {//o is for other
+void Member::delete(Member& o) //o is for other
+{
 	followers.erase(&o);
 }
 
 
-void Member::follow(Member& o) {//o is for other
+void Member::Follow(Member& o) //o is for other
+{
 
 	if (&o == this)
 		return;
@@ -64,7 +63,8 @@ void Member::follow(Member& o) {//o is for other
 }
 
 
-void Member::unfollow(Member& o) {//o is for other
+void Member::Unfollow(Member& o) //o is for other
+{
 
 	if (&o == this)
 		return;
