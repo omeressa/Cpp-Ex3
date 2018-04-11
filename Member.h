@@ -1,7 +1,7 @@
 #pragma once
 
-#ifndef MEMBER_HPP_
-#define MEMBER_HPP_
+//#ifndef MEMBER_HPP_
+//#define MEMBER_HPP_
 
 #include <set>
 
@@ -38,4 +38,4 @@ public:
 
 };
 
-#endif /* MEMBER_HPP_ */
+//#endif /* MEMBER_HPP_ */
