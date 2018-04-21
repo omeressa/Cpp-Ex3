@@ -21,11 +21,8 @@ void test1() {
 	cout << "  " << Member::count() << endl; // 4
 }
 
-/**
-*Testing the changes of the number of all users
-*
-*/
 
+/*Testing the changes of the number of all users*/
 void test2() {
   Member a;
   cout<<"Number of all users is :"<< Member::count()<<endl;
@@ -34,6 +31,7 @@ void test2() {
   Member c;
   cout<<"Number of all users is :"<< Member::count()<<endl;
 }
+
 /*Testing the follow functiong , following and followers*/
 void test3() {
   Member a,b,c;
