@@ -13,7 +13,7 @@ Member::Member()
 /*Destructor*/
 Member::~Member()
 {
-	AllUsers--;
+	AllMembers--;
 
 	set<Member*>::iterator pointer;
 	
