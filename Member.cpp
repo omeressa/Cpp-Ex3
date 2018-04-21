@@ -2,17 +2,15 @@
 using namespace std;
 
 /* matsav hathalate*/
-int Member::AllUsers = 0;
+int Member::AllMembers = 0;
 
 /*Constructor*/
-/********************************************************************************************/
 Member::Member()
 {
-	AllUsers++;
+	AllMembers++;
 }
 
 /*Destructor*/
-/********************************************************************************************/
 Member::~Member()
 {
 	AllUsers--;
@@ -27,30 +25,15 @@ Member::~Member()
 	}
 }
 
-/********************************************************************************************/
-
-void Member::adding(Member& other){
-	followers.insert(&other);
-}
-
-void Member::deleting(Member& other){
-	followers.erase(&other);
-}
-
-/********************************************************************************************/
 
 int Member::count(){
-	return AllUsers;
+	return AllMembers;
 }
 
-/********************************************************************************************/
 
 void Member::follow(Member& other){
-	if( &other != this)
-{
 	following.insert(&other);
 	other.adding(*this);
-}
 }
 
 void Member::unfollow(Member& other){
@@ -64,6 +47,16 @@ int Member::numFollowers() const{
 
 int Member::numFollowing() const{
 	return following.size();
+}
+
+/* Helping Functions*/
+
+void Member::adding(Member& other){
+	followers.insert(&other);
+}
+
+void Member::deleting(Member& other){
+	followers.erase(&other);
 }
 
 
