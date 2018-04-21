@@ -21,7 +21,10 @@ void test1() {
 	cout << "  " << Member::count() << endl; // 4
 }
 
-/*Testing the changes of the number of all users*/
+/**
+*Testing the changes of the number of all users
+*
+*/
 
 void test2() {
   Member a;
