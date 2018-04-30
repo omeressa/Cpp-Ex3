@@ -32,11 +32,15 @@ int Member::count(){
 
 
 void Member::follow(Member& other){
+	if(&other == this)
+		return;
 	following.insert(&other);
 	other.followers.insert(this);
 }
 
 void Member::unfollow(Member& other){
+	if(&other==this)
+		return;
 	following.erase(&other);
 	other.followers.erase(this);
 }
