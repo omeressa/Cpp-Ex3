@@ -33,12 +33,12 @@ int Member::count(){
 
 void Member::follow(Member& other){
 	following.insert(&other);
-	other.followers.insert(*this);
+	other.followers.insert(this);
 }
 
 void Member::unfollow(Member& other){
 	following.erase(&other);
-	other.followers.erase(*this);
+	other.followers.erase(this);
 }
 
 int Member::numFollowers() const{
